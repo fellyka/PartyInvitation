@@ -1,0 +1,40 @@
+@model PartyInvitation.Models.InviteeResponse
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "";
+}
+
+<form  asp-controller="Home" asp-action="RsvpForm" method="POST">
+ <h5 class="bg-primary text-white text-center m-2 p-2">RVSP</h5>
+
+        <div class="text-danger" asp-validation-summary="All"></div>
+
+        <div class="form-group">
+            <label asp-for="Name" ></label>
+            <input asp-for="Name"  class="form-control" placeholder="Enter Your Name"/>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" ></label>
+            <input asp-for="Email" class="form-control" placeholder="Enter Your Email"/>
+            <small class="form-text text-muted">We'll never share your email with anyone else</small>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Phone" ></label>
+            <input asp-for="Phone" class="form-control" placeholder="Enter Your Phone number" />
+        </div>
+
+        <div class="form-group">
+            <label>Will you attend?</label>
+            <select asp-for="WillAttend" class="form-control">
+                <option value="">Choose an option</option>
+                <option value="true">Yes, I'll be there</option>
+                <option value="false">No, I can't come</option>
+            </select>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary">Submit RSVP</button>
+        </div>
+</form>
